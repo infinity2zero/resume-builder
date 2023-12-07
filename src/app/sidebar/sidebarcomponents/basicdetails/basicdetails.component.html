@@ -1,0 +1,140 @@
+<div class="d-flex align-items-center border-bottom sidebar-items" routerLink="/home" skipLocationChange="true">
+    <div class="flex-shrink-0">
+        <img alt="right-arrow" src="assets/left-arrow.svg" width="16" height="16" decoding="async" data-nimg="1"
+            loading="lazy" style="color: transparent; margin-right: 1rem;">
+    </div>
+    <div class="flex-grow-1 py-3">
+        Basic Details
+    </div>
+</div>
+
+<ul ngbNav #nav="ngbNav" class="nav nav-underline">
+    <li ngbNavItem>
+        <button ngbNavLink>Contacts</button>
+        <ng-template ngbNavContent>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <form [formGroup]="contactsForm">
+                        <div class="form-row mb-2">
+                            <div class="form-group">
+                                <label class="input-label" class="input-label">Name</label>
+                                <input type="text" formControlName="firstName" class="form-control"
+                                    placeholder="Name" />
+
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Title/Designation</label>
+                                <input type="text" formControlName="title" class="form-control"
+                                    placeholder="Title/Designation" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Email</label>
+                                <input type="text" formControlName="email" class="form-control" placeholder="Email" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Phone</label>
+                                <input type="text" formControlName="phone" class="form-control" placeholder="Phone" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Location/Address</label>
+                                <input type="text" formControlName="location" class="form-control"
+                                    placeholder="Location/Address" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Relevant Experience</label>
+                                <input type="text" formControlName="rexperience" class="form-control"
+                                    placeholder="Relevant Experience" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Total Experience</label>
+                                <input type="text" formControlName="texperience" class="form-control"
+                                    placeholder="Total Experience" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <button ngbNavLink>Links</button>
+        <ng-template ngbNavContent>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <form [formGroup]="linksForm">
+                        <div class="form-row mb-2">
+                            <div class="form-group">
+                                <label class="input-label" class="input-label">Twitter</label>
+                                <input type="text" formControlName="twitter" class="form-control"
+                                    placeholder="Twitter" />
+
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Linkedin</label>
+                                <input type="text" formControlName="linkedin" class="form-control"
+                                    placeholder="Linkedin" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">GitHub</label>
+                                <input type="text" formControlName="github" class="form-control" placeholder="GitHub" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Hackerrank</label>
+                                <input type="text" formControlName="hackerrank" class="form-control"
+                                    placeholder="Hackerrank" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">HackerEarth</label>
+                                <input type="text" formControlName="hackerearth" class="form-control"
+                                    placeholder="HackerEarth" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Leetcode</label>
+                                <input type="text" formControlName="leetcode" class="form-control"
+                                    placeholder="Leetcode" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="input-label">Personal Website</label>
+                                <input type="text" formControlName="personalWebsite" class="form-control"
+                                    placeholder="Personal Website" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </ng-template>
+    </li>
+    <li ngbNavItem style="color: black;">
+        <button ngbNavLink>About</button>
+        <ng-template ngbNavContent>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <form [formGroup]="aboutForm">
+                        <div class="form-row mb-2">
+                            <div class="form-group">
+                                <label class="input-label-editor">About Me</label>
+                                <ckeditor [editor]="Editor" tagName="textarea" [config]="editorConfig"
+                                formControlName="aboutMe" class="form-control"
+                                ></ckeditor>
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <div class="form-group">
+                                <label class="input-label-editor">Career Objective</label>
+                                <ckeditor [editor]="Editor" tagName="textarea" [config]="editorConfig"
+                                formControlName="objective" class="form-control"
+                                ></ckeditor>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-template>
+
+    </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
