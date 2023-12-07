@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+body {
+    padding-top: 3.5rem;
+}
+
+.sidebar-items {
+    cursor: pointer;
+}
+
+input {
+    border: 0 !important;
+    border-bottom: 1px solid lightgray !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+
+    &:focus {
+        box-shadow: none !important
+    }
+}
+
+.input-label {
+    visibility: hidden;
+}
+
+.input-label:has(+ input:focus) {
+    visibility: visible;
+    font-weight: lighter;
+}
+input{
+    &:focus {
+        border-bottom: 2px solid lightgray !important;
+        &::placeholder {
+            color: transparent;
+        }
+    }
+    
+}
+ 
+.input-label:has(+ input:not(:placeholder-shown)) {
+    visibility: visible;
+    font-weight: lighter;
+}
+.sidebar-items{
+    color: white;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

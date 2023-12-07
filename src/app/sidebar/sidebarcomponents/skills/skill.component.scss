@@ -1,0 +1,24 @@
+.skill-container {
+    background-color: #e8f1f345;
+    padding: .5rem;
+    // padding-right: .5rem;
+    .custom-header {
+        &::after {
+            content: none;
+        }
+
+        &:active,
+        &:focus,
+        :focus-within {
+            box-shadow: none !important;
+        }
+
+        .collapse-expand-btn {
+            padding-left: 0 !important;
+        }
+    }
+    .collapse-expand-item {
+        margin-bottom: 2rem;
+        border: 0;
+    }
+}
