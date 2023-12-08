@@ -1,0 +1,53 @@
+<div class="d-flex align-items-center border-bottom sidebar-items" routerLink="/home" skipLocationChange="true">
+    <div class="flex-shrink-0">
+        <img alt="right-arrow" src="assets/left-arrow.svg" width="16" height="16" decoding="async" data-nimg="1"
+            loading="lazy" style="color: transparent; margin-right: 1rem;">
+    </div>
+    <div class="flex-grow-1 py-3">
+        Education
+    </div>
+</div>
+<form [formGroup]="educationForm">
+    <div class="card mt-2" *ngFor="let qualification of qualificationFormGroups; let i = index">
+        <div class="card-body">
+            
+
+            <div [formGroup]="qualification" class="form-row mb-2">
+                <div class="form-group">
+                    <label class="input-label" class="input-label">School/College Name</label>
+                    <input type="text" formControlName="school" class="form-control"
+                        placeholder="School/College Name" />
+                </div>
+                <div class="form-group mb-2">
+                    <label class="input-label">Degree</label>
+                    <input type="text" formControlName="degree" class="form-control" placeholder="Degree" />
+                </div>
+                <div class="form-group mb-2">
+                    <label class="input-label">Area</label>
+                    <input type="text" formControlName="area" class="form-control" placeholder="Area" />
+                </div>
+                <div class="form-group mb-2">
+                    <label class="input-label">Grade</label>
+                    <input type="text" formControlName="grade" class="form-control" placeholder="grade" />
+                </div>
+                <div class="form-group mb-2">
+                    <label class="input-label">Start Date</label>
+                    <input type="text" formControlName="startdate" class="form-control" placeholder="Start Date" />
+                </div>
+                <div class="form-group mb-2">
+                    <label class="input-label">End Date</label>
+                    <input type="text" formControlName="enddate" class="form-control" placeholder="End Date" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-light"
+                (click)="this.numberOfQualifications=this.numberOfQualifications+1;onChangequalifications()">
+                ADD A DEGREE
+            </button>
+
+            <button type="button" class="btn btn-light"
+                (click)="this.numberOfQualifications=this.numberOfQualifications-1;onChangequalifications()">
+                REMOVE A DEGREE
+            </button>
+</form>
